@@ -165,7 +165,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 👨‍💻 Author
 
-**Sameer** - *Initial work* - [YourGitHubUsername](https://github.com/SOWJANYAKAGITHA)
+**Sowjanya** - *Initial work* - [YourGitHubUsername](https://github.com/SOWJANYAKAGITHA)
 
 ## 🙏 Acknowledgments
 
