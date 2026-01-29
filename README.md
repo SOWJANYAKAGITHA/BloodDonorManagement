@@ -1,185 +1,80 @@
-# Blood Donor Management System
+# Blood Bank Management System
+![developer](https://img.shields.io/badge/Developed%20By%20%3A-Sumit%20Kumar-red)
+---
+## Screenshots
+### Homepage
+![homepage snap](https://github.com/sumitkumar1503/bloodbankmanagement/blob/master/static/screenshot/homepage.png?raw=true)
+### Admin Dashboard
+![dashboard snap](https://github.com/sumitkumar1503/bloodbankmanagement/blob/master/static/screenshot/admindashboard.png?raw=true)
+### Blood Donation 
+![invoice snap](https://github.com/sumitkumar1503/bloodbankmanagement/blob/master/static/screenshot/blooddonation.png?raw=true)
+### Blood Request
+![doctor snap](https://github.com/sumitkumar1503/bloodbankmanagement/blob/master/static/screenshot/bloodrequest.png?raw=true)
+### Logout
+![doctor snap](https://github.com/sumitkumar1503/bloodbankmanagement/blob/master/static/screenshot/logout.png?raw=true)
+---
+## Functions
 
-A comprehensive C-based console application for managing blood donors and blood bank operations. This system provides a complete solution for blood banks to manage donor information, track blood stock, and serve blood to customers.
-
-## 🩸 Features
-
-### Blood Donor Management System
-- **Add Donor**: Register new blood donors with complete information
-- **Delete Donor**: Remove donors from the system using contact number
-- **Edit Donor**: Update donor information (address and last donation date)
-- **Search Donor**: Find donors by blood group and address
-- **Filter Donor**: View donors who donated blood less than 3 months ago
-- **View All Donors**: Display complete list of registered donors
-- **Data Persistence**: Save and load donor data from files
-
-### Blood Bank Management System
-- **Add Blood Stock**: Manage blood inventory by blood group
-- **Serve Blood**: Process blood requests from customers
-- **View Blood Stock**: Display current blood inventory levels
-- **View Customer List**: Track all blood service transactions
-- **Admin Authentication**: Secure access with password protection
-- **Data Management**: Persistent storage of stock and customer data
-
-## 📋 Prerequisites
-
-- C compiler (GCC recommended)
-- Windows/Linux/macOS operating system
-- Basic understanding of console applications
-
-## 🚀 Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/BloodDonorManagement.git
-   cd BloodDonorManagement
-   ```
-
-2. **Compile the program**
-   ```bash
-   gcc -o main Main.c
-   ```
-
-3. **Run the application**
-   ```bash
-   ./main
-   ```
-   On Windows:
-   ```bash
-   main.exe
-   ```
-
-## 📖 Usage Guide
-
-### Main Menu
-The application starts with a main menu offering four options:
-1. **Blood Donor Management System**
-2. **Blood Bank Management System**
-3. **Help**
-4. **About**
-
-### Blood Donor Management
-
-#### Adding a Donor
-1. Select option 1 from main menu
-2. Choose option 1 (Add Donor)
-3. Enter donor details:
-   - Name
-   - Contact Number
-   - Address
-   - Blood Group
-   - Last Donation Date (YYYY-MM-DD format)
-4. Save to file using option 6
-
-#### Managing Donors
-- **Delete**: Use contact number to remove donors
-- **Edit**: Update address and donation date by contact number
-- **Search**: Find donors by blood group and address
-- **Filter**: View eligible donors (donated >3 months ago)
-
-### Blood Bank Management
-
-#### Access Control
-- **Password**: `admin123` (default admin password)
-- **Security**: Password-protected access to blood bank operations
-
-#### Blood Stock Management
-- **Add Stock**: Increase blood inventory by blood group
-- **View Stock**: Check current blood availability
-- **Serve Blood**: Process customer requests and update inventory
-
-#### Customer Service
-- **Serve Blood**: Record blood service transactions
-- **View Customers**: Track all blood service history
-
-## 📁 File Structure
-
+### Admin
+- Create Admin account using following command
 ```
-BloodDonorManagement/
-├── Main.c                 # Main source code
-├── main.exe              # Compiled executable (Windows)
-├── donors.txt            # Donor database
-├── blood_stock.txt       # Blood inventory data
-├── customer_list.txt     # Customer transaction records
-├── README.md            # This file
-└── blood_donor.pptx     # Project presentation
+py manage.py createsuperuser
 ```
+- After Login, can see Unit of blood of each blood group available, Number Of Donor, Number of blood request, Number of approved request, Total Unit of blood on Dashboard.
+- Can View, Update, Delete Donor.
+- Can View, Update, Delete Patient.
+- Can View Donation Request made by donor and can approve or reject that request based on disease of donor.
+- If Donation Request approved by admin then that unit of blood added to blood stock of that blood group.
+- If Donation Request rejected by admin then 0 unit of blood added to stock.
+- Can View Blood Request made by donor / patient and can approve or reject that request.
+- If Blood Request approved by admin then that unit of blood reduced from blood stock of that blood group.
+- If Blood Request rejected by admin then 0 unit of blood reduced from stock.
+- Can see history of blood request.
+- Can Update Unit Of Particular Blood Group.
 
-## 💾 Data Storage
 
-The system uses simple text files for data persistence:
+### Donor
+- Donor can create account by providing basic details.
+- After Login, Donor can donate blood, After approval from admin only, blood will be added to blood stock.
+- Donor can see their donation history with status (Pending, Approved, Rejected).
+- Donor can also request for blood from blood stock.
+- Donor can see their blood request history with status.
+- Donor can see number of blood request Made, Approved, Pending, Rejected by Admin on their dashboard.
+> **_NOTE:_**  Donor can donate blood and can also request for blood.
 
-- **donors.txt**: Stores donor information (CSV format)
-- **blood_stock.txt**: Tracks blood inventory by group
-- **customer_list.txt**: Records blood service transactions
 
-### Data Format Examples
 
-**Donor Record:**
-```
-Name,ContactNumber,Address,BloodGroup,LastDonationDate
-```
 
-**Blood Stock:**
-```
-BloodGroup Quantity
-```
 
-**Customer Transaction:**
-```
-Name,ContactNumber,Address,BloodGroup,Bags,Date
-```
-
-## 🔧 Technical Details
-
-- **Language**: C
-- **Data Structures**: Linked Lists
-- **File I/O**: Text file operations
-- **Memory Management**: Dynamic allocation with proper cleanup
-- **Platform**: Cross-platform (Windows/Linux/macOS)
-
-## 🛡️ Security Features
-
-- **Admin Authentication**: Password-protected blood bank access
-- **Data Validation**: Input validation for critical operations
-- **Memory Safety**: Proper memory allocation and deallocation
-
-## 📊 System Requirements
-
-- **RAM**: Minimum 512MB
-- **Storage**: 10MB free space
-- **OS**: Windows 10+, Linux, macOS
-- **Compiler**: GCC or compatible C compiler
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 👨‍💻 Author
-
-**Sowjanya** - *Initial work* - [YourGitHubUsername](https://github.com/SOWJANYAKAGITHA)
-
-## 🙏 Acknowledgments
-
-- Blood bank management concepts
-- C programming best practices
-- Console application design patterns
-
-## 📞 Support
-
-For support and questions:
-- Create an issue in the GitHub repository
-- Contact the project maintainer
-- Check the Help section in the application
+### Patient
+- Create account (No Approval Required By Admin, Can Login After Signup)
+- After Login, Can see number of blood request Made, Approved, Pending, Rejected by Admin on their dashboard.
+- Patient can request for blood of specific blood group and unit from blood stock.
+- Patient can see their blood request history with status (Pending, Approved, Rejected).
 
 ---
 
-**Note**: This system is designed for educational and demonstration purposes. For production use in actual blood banks, additional security measures and compliance with healthcare regulations would be required. 
+## HOW TO RUN THIS PROJECT
+- Install Python(3.7.6) (Dont Forget to Tick Add to Path while installing Python)
+- Download This Project Zip Folder and Extract it
+- Move to project folder in Terminal. Then run following Commands :
+
+```
+python -m pip install -r requirements. txt
+```
+
+```
+py manage.py makemigrations
+py manage.py migrate
+py manage.py runserver
+```
+- Now enter following URL in Your Browser Installed On Your Pc
+```
+http://127.0.0.1:8000/
+```
+
+
+## Feedback
+Any suggestion and feedback is welcome. You can message me on facebook
+- [Contact on Facebook](https://fb.com/sumit.luv)
+- [Subscribe my Channel LazyCoder On Youtube](https://youtube.com/lazycoders)
